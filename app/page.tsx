@@ -221,7 +221,7 @@ export default function HomePage() {
               mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-lg px-8 py-6">
+              <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-lg px-8 py-6 transition-transform transition-shadow duration-200 hover:-translate-y-1 active:translate-y-0 hover:shadow-[0_0_20px_rgba(255,255,255,0.35)]">
                 <Link href="/contact">
                   Get Involved
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -231,7 +231,7 @@ export default function HomePage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-navy-600 text-lg px-8 py-6"
+                className="border-white text-[#004687] hover:bg-white hover:text-[#004687] text-lg px-8 py-6 transition-transform transition-shadow duration-200 hover:-translate-y-1 active:translate-y-0 hover:shadow-[0_0_20px_rgba(255,255,255,0.35)]"
               >
                 <Link href="/about">Learn More</Link>
               </Button>
