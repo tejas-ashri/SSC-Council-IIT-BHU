@@ -1,10 +1,19 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Header from '@/components/header'
+import ScrollReveal from '@/components/scroll-reveal'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
+  title: 'SSC IIT BHU Varanasi',
   description: 'Created with v0',
   generator: 'v0.dev',
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/favicon-32x32.png',
+  },
 }
 
 export default function RootLayout({
@@ -14,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <ScrollReveal />
+      </body>
     </html>
   )
 }

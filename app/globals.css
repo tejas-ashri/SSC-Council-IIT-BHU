@@ -92,3 +92,95 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Animated navbar link */
+  .nav-link {
+    @apply relative inline-flex items-center text-sm font-semibold text-gray-600 pb-1 transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/40 rounded-sm;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease-out;
+    border-radius: 9999px;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+  .nav-link:hover { transform: translateY(-1px); }
+  .nav-link:active { transform: translateY(0); }
+
+  /* Animated primary action button (Join Us) */
+  .btn-animated {
+    @apply relative inline-flex items-center justify-center transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50 active:scale-[0.98];
+  }
+  .btn-animated::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(120px 120px at var(--x,50%) var(--y,50%), rgba(255,255,255,0.18), transparent 60%);
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+    pointer-events: none;
+  }
+  .btn-animated:hover::before {
+    opacity: 1;
+  }
+
+  /* Ripple effect */
+  .ripple-base { @apply relative overflow-hidden; }
+  .ripple-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12rem;
+    height: 12rem;
+    background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0) 60%);
+    transform: translate(calc(var(--x,50%) - 6rem), calc(var(--y,50%) - 6rem)) scale(0.2);
+    opacity: 0.9;
+    pointer-events: none;
+    border-radius: 9999px;
+    animation: ripple-pop 480ms ease-out forwards;
+    mix-blend-mode: screen;
+  }
+
+  @keyframes ripple-pop {
+    to {
+      transform: translate(calc(var(--x,50%) - 6rem), calc(var(--y,50%) - 6rem)) scale(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* Scroll reveal base + variants */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px) scale(0.995);
+    transition: opacity 500ms ease, transform 600ms cubic-bezier(0.2, 0.65, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms ease, transform 600ms cubic-bezier(0.2, 0.65, 0.2, 1);
+  }
+  .reveal.revealed.reveal-stagger > * { opacity: 1; transform: translateY(0); }
+  .reveal.revealed.reveal-stagger > *:nth-child(1) { transition-delay: 40ms }
+  .reveal.revealed.reveal-stagger > *:nth-child(2) { transition-delay: 80ms }
+  .reveal.revealed.reveal-stagger > *:nth-child(3) { transition-delay: 120ms }
+  .reveal.revealed.reveal-stagger > *:nth-child(4) { transition-delay: 160ms }
+  .reveal.revealed.reveal-stagger > *:nth-child(5) { transition-delay: 200ms }
+}

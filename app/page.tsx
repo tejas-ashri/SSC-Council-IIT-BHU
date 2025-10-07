@@ -4,16 +4,14 @@ import { Badge } from "@/components/ui/badge"
 import { Heart, Users, ArrowRight, HandHeart, GraduationCap, Building, Calendar, Award, Target } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32 reveal">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -73,7 +71,7 @@ export default function HomePage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 reveal reveal-stagger">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl mb-6">Our Mission</h2>
@@ -135,7 +133,7 @@ export default function HomePage() {
       </section>
 
       {/* Quick Overview */}
-      <section className="bg-gray-50 py-20 md:py-32">
+      <section className="bg-gray-50 py-20 md:py-32 reveal reveal-stagger">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl mb-6">What We Do</h2>
@@ -213,7 +211,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-br from-navy-600 to-navy-800 text-white py-20 md:py-32">
+      <section className="bg-gradient-to-br from-navy-600 to-navy-800 text-white py-20 md:py-32 reveal">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Ready to Make a Difference?</h2>
@@ -223,7 +221,7 @@ export default function HomePage() {
               mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-lg px-8 py-6">
+              <Button asChild size="lg" className="bg-orange-600 hover:bg-orange-700 text-lg px-8 py-6 transition-transform transition-shadow duration-200 hover:-translate-y-1 active:translate-y-0 hover:shadow-[0_0_20px_rgba(255,255,255,0.35)]">
                 <Link href="/contact">
                   Get Involved
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -233,7 +231,7 @@ export default function HomePage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-navy-600 text-lg px-8 py-6"
+                className="border-white text-[#004687] hover:bg-white hover:text-[#004687] text-lg px-8 py-6 transition-transform transition-shadow duration-200 hover:-translate-y-1 active:translate-y-0 hover:shadow-[0_0_20px_rgba(255,255,255,0.35)]"
               >
                 <Link href="/about">Learn More</Link>
               </Button>

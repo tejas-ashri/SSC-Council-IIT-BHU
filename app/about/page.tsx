@@ -4,16 +4,14 @@ import { Badge } from "@/components/ui/badge"
 import { HandHeart, Star, ArrowRight, Award, Target } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32 reveal">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
             <Badge className="mb-6 bg-orange-100 text-orange-800 hover:bg-orange-100">About Us</Badge>
@@ -31,7 +29,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 reveal reveal-stagger">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-2 items-center mb-20">
@@ -118,7 +116,7 @@ export default function AboutPage() {
       </section>
 
       {/* Impact Statistics */}
-      <section className="bg-navy-900 text-white py-20 md:py-32">
+      <section className="bg-navy-900 text-white py-20 md:py-32 reveal">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Our Impact</h2>
@@ -149,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 reveal reveal-stagger">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl mb-6">What People Say</h2>

@@ -2,16 +2,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Building, HandHeart, Users, Stethoscope } from "lucide-react"
 import Image from "next/image"
-import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export default function ClubsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32 reveal">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
             <Badge className="mb-6 bg-orange-100 text-orange-800 hover:bg-orange-100">Our Clubs</Badge>
@@ -28,7 +26,7 @@ export default function ClubsPage() {
       </section>
 
       {/* Clubs Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 reveal reveal-stagger">
         <div className="container px-4 md:px-6">
           <div className="space-y-20">
             {/* Kashi Utkarsh Club */}
@@ -231,7 +229,7 @@ export default function ClubsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-br from-navy-600 to-navy-800 text-white py-20 md:py-32">
+      <section className="bg-gradient-to-br from-navy-600 to-navy-800 text-white py-20 md:py-32 reveal">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Join a Club Today</h2>

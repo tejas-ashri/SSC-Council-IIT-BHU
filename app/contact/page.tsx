@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { MapPin, Mail, Phone, ExternalLink, Users, Calendar, Award } from "lucide-react"
-import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export default function ContactPage() {
@@ -15,10 +14,9 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-50 via-blue-50 to-orange-50 py-20 md:py-32 reveal">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
             <Badge className="mb-6 bg-orange-100 text-orange-800 hover:bg-orange-100">Get Involved</Badge>
@@ -35,7 +33,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information & Form */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 reveal reveal-stagger">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-2">
@@ -199,7 +197,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-50 py-20 md:py-32">
+      <section className="bg-gray-50 py-20 md:py-32 reveal reveal-stagger">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-16">
