@@ -1,1 +1,0 @@
-# SSC-Council-Template
